@@ -8,7 +8,7 @@
 <body>
       <div id="grid">
          <table class = "grid-col" id = "grid1">
-           <td id = "td0-0" onclick="fillColor(this.id, 'red')"></td>
+           <td id = "td0-0" onclick="fillColor(this.id)"></td>
          </table>
       </div>
 
@@ -17,6 +17,7 @@
         <li><button id="removeRows" onclick="removeRows()">Remove Rows</button></li>
         <li><button id="addColumns" onclick="addColumns()">Add Columns</button></li>
         <li><button id="removeColumns" onclick="removeColumns()">Remove Columns</button></li>
+        <li><button id="fillAllUncolored" onclick="fillAllUncolored()">Fill All Uncolored</button></li>
     </ul>
 
 <!--select a color from a dropdown menu of colors -->

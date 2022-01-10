@@ -42,18 +42,32 @@ function updateCellIds(){
         for(let j = 0; j < grid.rows[i].cells.length; j++){
             grid.rows[i].cells[j].id = "tr" + i + '-' + j
             grid.rows[i].cells[j].onclick = function(){
-                let r = this.parentElement.rowIndex
-                let c = this.cellIndex;
-                console.log(this.id)
-                fillColor(this.id, "red")
+                fillColor(this.id)
             }
         }
     }
 }
 
-function fillColor(id, color){
+function getCurPenColor(){
     let penColor = document.getElementById("color-select")
-    color = penColor.value
+    let color = penColor.value
+    return color
+}
+
+function fillColor(id){
+    let color = getCurPenColor()
     let cell = document.getElementById(id)
     cell.style.background = color
+}
+
+function fillAllUncolored(){
+    let color = getCurPenColor()
+    console.log(color)
+    for(let i = 0; i < grid.rows.length; i++){
+        for(let j = 0; j < grid.rows[i].cells.length; j++){
+            let id =  "tr" + i + '-' + j
+            let cell = document.getElementById(id)
+            cell.style.background = cell.style.background === "" ? color : cell.style.background
+        }
+    } 
 }
