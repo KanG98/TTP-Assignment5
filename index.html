@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div id="grid">
+         <table class = "grid-col" id = "grid1">
+           <td id = grid-td></td>
+         </table>
+      </div>
+
+    <ul>
+        <li><button id="addRows" onclick="addRows()">Add Rows</button></li>
+        <li><button id="removeRows" onclick="removeRows()">Remove Rows</button></li>
+        <li><button id="addColumns" onclick="addColumns()">Add Columns</button></li>
+        <li><button id="removeColumns" onclick="removeColumns()">Remove Columns</button></li>
+    </ul>
+
+<!--select a color from a dropdown menu of colors -->
+    <p>
+        <label>Select a color</label>
+        <select id="color-select" onchange="colorUsed(this.value)">
+          <option value= "red">Red</option>
+          <option value="orange">Orange</option>
+          <option value="yellow">Yellow</option>
+          <option value="green">Green</option>
+          <option value="lightgreen">Lightgreen</option>
+          <option value="blue">Blue</option>
+          <option value="purple">Purple</option>
+        </select>
+    </p>
+
+    <script src="script.js"></script>
+</body>
+</html>
