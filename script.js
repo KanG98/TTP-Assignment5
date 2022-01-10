@@ -37,6 +37,7 @@ function removeColumns() {
     updateCellIds()
 }
 
+// assign id to cells 
 function updateCellIds(){
     for(let i = 0; i < grid.rows.length; i++){
         for(let j = 0; j < grid.rows[i].cells.length; j++){
@@ -48,26 +49,39 @@ function updateCellIds(){
     }
 }
 
+// get selected color from select tag
 function getCurPenColor(){
     let penColor = document.getElementById("color-select")
     let color = penColor.value
     return color
 }
 
+// fill cell with selected color
 function fillColor(id){
     let color = getCurPenColor()
     let cell = document.getElementById(id)
     cell.style.background = color
 }
 
+// fill all empty cells with selected color
 function fillAllUncolored(){
-    let color = getCurPenColor()
-    console.log(color)
     for(let i = 0; i < grid.rows.length; i++){
         for(let j = 0; j < grid.rows[i].cells.length; j++){
             let id =  "tr" + i + '-' + j
             let cell = document.getElementById(id)
-            cell.style.background = cell.style.background === "" ? color : cell.style.background
+            if(cell.style.background === ""){
+                fillColor(id)
+            } 
+        }
+    } 
+}
+
+// fill all cells with selected color
+function fillAll(){
+    for(let i = 0; i < grid.rows.length; i++){
+        for(let j = 0; j < grid.rows[i].cells.length; j++){
+            let id =  "tr" + i + '-' + j
+            fillColor(id)
         }
     } 
 }
