@@ -1,21 +1,23 @@
-/* (A) GRID CONTAINER */
-#grid-col {
+body {
+    margin: 0;
+    color: black;
+    background-color:lightyellow;
+}
+button {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: dashed;
+    background-color: lightpink;
+    color: white;
+}
+.grid1 {
   display: grid;
-  grid-template-columns: auto auto;
-
-  /* WE CAN ALSO SPECIFY EXACT PIXELS, PERCENTAGE, REPEAT
-  grid-template-columns: 200px 40%;
-  grid-template-columns: repeat(2, 250px); */
+  grid-template-columns: auto auto auto;
+  padding: 5px;
 }
 
-/* (B) GRID CELLS */
-div.cell {
-  background: LightBlue;
-  border: 1px solid Blue;
+table, td {
+  border: 1px solid black;
   padding: 10px;
-}
-
-/* (C) RESPONSIVE - 1 COLUMN ON SMALL SCREENS */
-@media screen and (max-width: 640px) {
-  #grid-col { grid-template-columns: 100%; }
 }
