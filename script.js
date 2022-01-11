@@ -112,7 +112,7 @@ grid.addEventListener("mousemove",function(e) {
         e.target.style.backgroundColor = color;
     }
     });
-
+//
 
 
 
