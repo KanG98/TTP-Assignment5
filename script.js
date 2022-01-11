@@ -109,17 +109,6 @@ for(let i =0;i<row.length;i++)
         });
     }
 
-grid.addEventListener("mousemove", (ev) => {
-  if (isClicked) {
-    let clr = document.getElementById("clrSelection")
-    let setClr = clr.options[clr.selectedIndex].value
-    ev.target.setAttribute("bgcolor", setClr)
-  }
-})
-myTableEl.addEventListener("mouseup", (ev) => {
-  if (isClicked) {
-    isClicked = false
-  }
-})
+
 
 
