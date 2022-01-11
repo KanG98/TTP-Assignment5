@@ -99,7 +99,6 @@ function clearAll(){
 let colored= false;
 let color = getCurPenColor()
 grid.addEventListener("mousedown", function () {
-    e.target.style.backgroundColor = color;
     colored =true; 
     console.log("DOWN")
 })
