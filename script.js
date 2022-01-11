@@ -96,18 +96,25 @@ function clearAll(){
 }
 
 //click and hold (mouseover) from a single cell (start) to a different cell (end) such that all affected/hovered-over cells from start to end change to the currently selected color
-let colored= false
+let colored= false;
 let color = getCurPenColor()
-for(let i =0;i<row.length;i++)
-    for(let j=0;i<row[i].cells.length;j++){
-        row[i].cells[j].addEventListener("mousedown", e=> colored =true)
-        row[i].cells[j].addEventListener("mouseup", e=> colored =false)
-        row[i].cells[j].addEventListener("mousemove",e=>{
-            if(colored){
-                row[i].cells[j].style.background = color;
-            }
-        });
+grid.addEventListener("mousedown", function () {
+    e.target.style.backgroundColor = color;
+    colored =true; 
+    console.log("DOWN")
+})
+ grid.addEventListener("mouseup", function() {
+    colored =false;
+    console.log("UP")
+})
+grid.addEventListener("mousemove",function(e) {
+    if(colored){
+        console.log("MOVE");
+        e.target.style.backgroundColor = color;
     }
+    });
+
+
 
 
 
