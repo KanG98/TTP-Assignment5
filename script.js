@@ -97,17 +97,17 @@ function clearAll(){
 
 //click and hold (mouseover) from a single cell (start) to a different cell (end) such that all affected/hovered-over cells from start to end change to the currently selected color
 let colored= false;
-let color = getCurPenColor()
 grid.addEventListener("mousedown", function () {
     colored =true; 
     console.log("DOWN")
 })
- grid.addEventListener("mouseup", function() {
+grid.addEventListener("mouseup", function() {
     colored =false;
     console.log("UP")
 })
 grid.addEventListener("mousemove",function(e) {
     if(colored){
+        let color = getCurPenColor()
         console.log("MOVE");
         e.target.style.backgroundColor = color;
     }
