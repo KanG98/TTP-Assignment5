@@ -85,3 +85,41 @@ function fillAll(){
         }
     } 
 }
+
+//clear all cells/restore all cells to their original/initial color
+function clearAll(){
+    for(let i=0;i<row.length;i++){
+        for(let j=0; j<row[i].cells.length;j++){
+            row[i].cells[j].style.background = null;
+        }
+    }
+}
+
+//click and hold (mouseover) from a single cell (start) to a different cell (end) such that all affected/hovered-over cells from start to end change to the currently selected color
+let colored= false
+let color = getCurPenColor()
+for(let i =0;i<row.length;i++)
+    for(let j=0;i<row[i].cells.length;j++){
+        row[i].cells[j].addEventListener("mousedown", e=> colored =true)
+        row[i].cells[j].addEventListener("mouseup", e=> colored =false)
+        row[i].cells[j].addEventListener("mousemove",e=>{
+            if(colored){
+                row[i].cells[j].style.background = color;
+            }
+        });
+    }
+
+grid.addEventListener("mousemove", (ev) => {
+  if (isClicked) {
+    let clr = document.getElementById("clrSelection")
+    let setClr = clr.options[clr.selectedIndex].value
+    ev.target.setAttribute("bgcolor", setClr)
+  }
+})
+myTableEl.addEventListener("mouseup", (ev) => {
+  if (isClicked) {
+    isClicked = false
+  }
+})
+
+
