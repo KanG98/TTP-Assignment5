@@ -109,7 +109,7 @@ grid.addEventListener("mousedown", function () {
 grid.addEventListener("mousemove",function(e) {
     if(colored){
         console.log("MOVE");
-        e.target.style.backgroundColor = color;
+        e.target.style.background = color;
     }
     });
 //
